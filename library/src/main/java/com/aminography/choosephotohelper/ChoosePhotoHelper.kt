@@ -389,13 +389,25 @@ class ChoosePhotoHelper private constructor(
 
         const val REQUEST_CODE_TAKE_PHOTO_PERMISSION = 103
         val TAKE_PHOTO_PERMISSIONS = arrayOf(
-            Manifest.permission.CAMERA,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.CAMERA
+            } else {
+                Manifest.permission.CAMERA,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            }
+
         )
 
         const val REQUEST_CODE_PICK_PHOTO_PERMISSION = 104
         val PICK_PHOTO_PERMISSIONS = arrayOf(
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.CAMERA
+            } else {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            }
         )
 
         private const val FILE_PATH = "filePath"
