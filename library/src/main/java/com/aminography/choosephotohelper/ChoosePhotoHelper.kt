@@ -391,6 +391,8 @@ class ChoosePhotoHelper private constructor(
         val TAKE_PHOTO_PERMISSIONS = arrayOf(
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.READ_MEDIA_AUDIO,
+                Manifest.permission.READ_MEDIA_VIDEO,
                 Manifest.permission.CAMERA
             } else {
                 Manifest.permission.CAMERA,
@@ -404,6 +406,8 @@ class ChoosePhotoHelper private constructor(
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.READ_MEDIA_AUDIO,
+                Manifest.permission.READ_MEDIA_VIDEO,
                 Manifest.permission.CAMERA
             } else {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
